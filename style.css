@@ -18,6 +18,8 @@
     --sidebar-color: rgb(1, 93, 179);
     --button-color: rgb(1, 93, 179);
     --img-invert: invert(0);
+    --mode-position: flex-start;
+    --slider-color: #D9D9D9;
 }
 
 .dark {
@@ -29,7 +31,14 @@
     --sidebar-color: rgb(3, 3, 3);
     --button-color: rgb(46, 46, 46);
     --img-invert: invert(1);
+    --mode-position: flex-end;
+    --slider-color: #646464;
  }
+
+ .moveForward {
+    transform: translateX(22px);
+ }
+
 
 body {
     font-family: Poppins;
@@ -167,13 +176,33 @@ header {
 
 .userSettings {
     display: grid;
-    grid-template-columns: 30px 50px 50px 140px;
+    grid-template-columns: 50px 50px 50px 140px;
     justify-self: flex-end;
 }
 
 .userSettings > * {
     align-self: center;
     justify-self: center;
+}
+
+.sliderContainer {
+    height: 25px;
+    width: 50px;
+    border-radius: 100px;
+    background-color: var(--slider-color);
+    display: flex;
+    transform: Scale(0.8);
+    cursor: pointer;
+  }
+
+.bell {
+    border: none;
+    border-radius: 100px;
+    background-color: #727DE1;
+    height: 25px;
+    width: 28px;
+    z-index: 99;
+    transition: 0.5s;
 }
 
 .userSettings img:nth-child(1) {
@@ -193,7 +222,6 @@ header {
 
 .userSettings button {
     border: none;
-    background-color: inherit;
     cursor: pointer;
 }
 
